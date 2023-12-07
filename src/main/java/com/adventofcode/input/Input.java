@@ -22,12 +22,20 @@ public class Input {
                 .toList();
     }
 
-    public static List<String> day3() throws IOException {
-        return getInputFromFile("/day3");
+    public static char[][] day3() throws IOException {
+        return getInputFromFile("/day3")
+                .stream()
+                .map(String::toCharArray)
+                .toArray(char[][]::new);
     }
 
     public static List<String> day4() throws IOException {
         return getInputFromFile("/day4");
+    }
+
+
+    public static List<String> day5() throws IOException {
+        return getInputFromFile("/day5");
     }
 
     private static List<String> getInputFromFile(String resourceName) throws IOException {
