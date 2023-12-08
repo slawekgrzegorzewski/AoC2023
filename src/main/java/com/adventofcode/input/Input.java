@@ -2,6 +2,7 @@ package com.adventofcode.input;
 
 import com.adventofcode.input.day2.Game;
 import com.adventofcode.input.day4.Card;
+import com.adventofcode.input.day6.Almanac;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -37,11 +38,16 @@ public class Input {
                 .toList();
     }
 
-    public static List<String> day5() throws IOException {
-        return getInputFromFile("/day5");
+    public static Almanac day5() throws IOException {
+        return Almanac.parse(getInputFromFile("/day5"));
     }
+
     public static List<String> day6() throws IOException {
         return getInputFromFile("/day6");
+    }
+
+    public static List<String> day7() throws IOException {
+        return getInputFromFile("/day7");
     }
 
     private static List<String> getInputFromFile(String resourceName) throws IOException {
