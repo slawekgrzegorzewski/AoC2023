@@ -1,4 +1,4 @@
-package com.adventofcode.input.day6;
+package com.adventofcode.input.day5;
 
 import java.util.Arrays;
 import java.util.function.Predicate;

@@ -1,9 +1,11 @@
-package com.adventofcode.input.day6;
+package com.adventofcode.input.day5;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
+
+import static com.adventofcode.input.Utils.extractLongs;
 
 public record Almanac(long[] seeds,
                       List<Range> seedToSoilMap,
@@ -60,13 +62,5 @@ public record Almanac(long[] seeds,
             }
         }
         return result;
-    }
-
-    private static long[] extractLongs(String longsString) {
-        return Arrays.stream(longsString.trim().split(" "))
-                .filter(Predicate.not(String::isBlank))
-                .map(String::trim)
-                .mapToLong(Long::parseLong)
-                .toArray();
     }
 }

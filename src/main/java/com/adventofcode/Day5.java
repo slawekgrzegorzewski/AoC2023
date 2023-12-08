@@ -1,17 +1,12 @@
 package com.adventofcode;
 
 import com.adventofcode.input.Input;
-import com.adventofcode.input.day6.Almanac;
-import com.adventofcode.input.day6.Range;
+import com.adventofcode.input.day5.Almanac;
+import com.adventofcode.input.day5.Range;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.IntStream;
 import java.util.stream.LongStream;
-
-import static java.util.function.Function.identity;
 
 public class Day5 {
 
