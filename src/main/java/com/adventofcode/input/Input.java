@@ -1,6 +1,7 @@
 package com.adventofcode.input;
 
 import com.adventofcode.input.day2.Game;
+import com.adventofcode.input.day4.Card;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,13 +30,18 @@ public class Input {
                 .toArray(char[][]::new);
     }
 
-    public static List<String> day4() throws IOException {
-        return getInputFromFile("/day4");
+    public static List<Card> day4() throws IOException {
+        return getInputFromFile("/day4")
+                .stream()
+                .map(Card::parse)
+                .toList();
     }
-
 
     public static List<String> day5() throws IOException {
         return getInputFromFile("/day5");
+    }
+    public static List<String> day6() throws IOException {
+        return getInputFromFile("/day6");
     }
 
     private static List<String> getInputFromFile(String resourceName) throws IOException {
