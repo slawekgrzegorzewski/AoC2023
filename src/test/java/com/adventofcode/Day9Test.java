@@ -20,13 +20,13 @@ class Day9Test {
     void testPart1() {
         int part1Result = day9.part1();
         System.out.println("part1 = " + part1Result);
-        assertEquals(0, part1Result);
+        assertEquals(1916822650, part1Result);
     }
 
     @Test
     void testPart2() {
         int part2Result = day9.part2();
         System.out.println("part2 = " + part2Result);
-        assertEquals(0, part2Result);
+        assertEquals(966, part2Result);
     }
 }
