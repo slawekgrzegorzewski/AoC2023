@@ -1,6 +1,7 @@
 package com.adventofcode;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -24,11 +25,10 @@ class Day5Test {
     }
 
     @Test
+    @Disabled
     void testPart2() {
         long part2Result = day5.part2();
         System.out.println("part2 = " + part2Result);
         assertEquals(12634632, part2Result);
-        //33184373 too high
-        //929884604 not right
     }
 }

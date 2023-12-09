@@ -20,13 +20,13 @@ class Day7Test {
     void testPart1() {
         int part1Result = day7.part1();
         System.out.println("part1 = " + part1Result);
-        assertEquals(0, part1Result);
+        assertEquals(251_545_216, part1Result);
     }
 
     @Test
-    void testPart2() {
+    void testPart2() throws IOException {
         int part2Result = day7.part2();
         System.out.println("part2 = " + part2Result);
-        assertEquals(0, part2Result);
+        assertEquals(250_384_185, part2Result);
     }
 }
