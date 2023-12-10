@@ -7,26 +7,26 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class Day10Test {
+class Day12Test {
 
-    static Day10 day10;
+    static Day12 day12;
 
     @BeforeAll
     public static void init() throws IOException {
-        day10 = new Day10();
+        day12 = new Day12();
     }
 
     @Test
     void testPart1() {
-        int part1Result = day10.part1();
+        int part1Result = day12.part1();
         System.out.println("part1 = " + part1Result);
-        assertEquals(7086, part1Result);
+        assertEquals(0, part1Result);
     }
 
     @Test
     void testPart2() {
-        int part2Result = day10.part2();
+        int part2Result = day12.part2();
         System.out.println("part2 = " + part2Result);
-        assertEquals(317, part2Result);
+        assertEquals(0, part2Result);
     }
 }
