@@ -1,8 +1,11 @@
 package com.adventofcode.input;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class ArrayMap<T> {
     private final T[][] map;
@@ -18,8 +21,16 @@ public class ArrayMap<T> {
         return this;
     }
 
+    public int getWidth() {
+        return this.map[0].length;
+    }
+
+    public int getHeight() {
+        return this.map.length;
+    }
+
     public boolean isInBounds(Coordinates c) {
-        return c.x() >= 0 && c.x() < this.map.length && c.y() >= 0 && c.y() < this.map[0].length;
+        return c.x() >= 0 && c.x() < getHeight() && c.y() >= 0 && c.y() < getWidth();
     }
 
     public T getValue() {
@@ -107,6 +118,32 @@ public class ArrayMap<T> {
         }
     }
 
+    public Stream<Element<T>> traverse() {
+        List<Element<T>> elements = new ArrayList<>();
+        for (int i = 0; i < map.length; i++) {
+            for (int j = 0; j < map[i].length; j++) {
+                elements.add(new Element<>(new Coordinates(i, j), getValue(new Coordinates(i, j))));
+            }
+        }
+        return elements.stream();
+    }
+
+    public Stream<Element<T>> traverseRow(int x) {
+        List<Element<T>> row = new ArrayList<>();
+        for (int j = 0; j < map[x].length; j++) {
+            row.add(new Element<>(new Coordinates(x, j), getValue(new Coordinates(x, j))));
+        }
+        return row.stream();
+    }
+
+    public Stream<Element<T>> traverseColumn(int y) {
+        List<Element<T>> column = new ArrayList<>();
+        for (int i = 0; i < map.length; i++) {
+            column.add(new Element<>(new Coordinates(i, y), getValue(new Coordinates(i, y))));
+        }
+        return column.stream();
+    }
+
     public Optional<Coordinates> findFirst(Predicate<T> test) {
         for (int i = 0; i < map.length; i++) {
             for (int j = 0; j < map[i].length; j++) {
@@ -123,5 +160,8 @@ public class ArrayMap<T> {
                 coordinates -> System.out.print(getValue(coordinates)),
                 System.out::println
         );
+    }
+
+    public record Element<T>(Coordinates coordinates, T value) {
     }
 }

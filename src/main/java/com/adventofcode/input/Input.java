@@ -70,12 +70,24 @@ public class Input {
         return new ArrayMap<>(map);
     }
 
-    public static List<String> day11() throws IOException {
-        return getInputFromFile("/day11");
+    public static ArrayMap<Character> day11() throws IOException {
+        List<String> lines = getInputFromFile("/day11");
+        Character[][] map = new Character[lines.size()][lines.get(0).length()];
+        for (int i = 0; i < lines.size(); i++) {
+            char[] chars = lines.get(i).toCharArray();
+            for (int j = 0; j < chars.length; j++) {
+                map[i][j] = chars[j];
+            }
+        }
+        return new ArrayMap<>(map);
     }
 
     public static List<String> day12() throws IOException {
         return getInputFromFile("/day12");
+    }
+
+    public static List<String> day13() throws IOException {
+        return getInputFromFile("/day13");
     }
 
     private static List<String> getInputFromFile(String resourceName) throws IOException {
