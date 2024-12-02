@@ -7,7 +7,7 @@ version = "0.0.1-SNAPSHOT"
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(20))
+        languageVersion.set(JavaLanguageVersion.of(21))
     }
 }
 
@@ -29,7 +29,7 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains:annotations:20.1.0")
-    implementation("com.google.guava:guava:31.1-jre")
+    implementation("com.google.guava:guava:33.3.1-jre")
 
     testImplementation ("org.junit.jupiter:junit-jupiter-api:5.7.2")
     testImplementation ("org.junit.jupiter:junit-jupiter-params:5.7.2")
